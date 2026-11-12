@@ -1,0 +1,202 @@
+:root {
+  --bg: #f5f3ee;
+  --card: #ffffff;
+  --text: #1f2328;
+  --muted: #6b7280;
+  --accent: #1d4ed8;
+  --accent-text: #ffffff;
+  --border: #e5e1d8;
+  --error: #b91c1c;
+
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171a;
+    --card: #1f2227;
+    --text: #e8e6e3;
+    --muted: #9aa0a6;
+    --accent: #60a5fa;
+    --accent-text: #0b1220;
+    --border: #33373d;
+    --error: #f87171;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: var(--bg);
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 1.5rem;
+}
+
+.subtitle,
+.muted {
+  color: var(--muted);
+}
+
+.subtitle {
+  margin: 0 0 22px;
+  font-size: 0.95rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.date-row {
+  display: flex;
+  gap: 8px;
+  position: relative;
+}
+
+.date-input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  direction: ltr;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.date-input[aria-invalid='true'] {
+  border-color: var(--error);
+}
+
+/* The native date input only provides the popup calendar; the text field is what the user sees. */
+.native-picker {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+button {
+  font: inherit;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.picker-button {
+  padding: 0 12px;
+  font-size: 1.1rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.field-error,
+.error {
+  color: var(--error);
+}
+
+.field-error {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+}
+
+.checkbox {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 14px 0 20px;
+  font-weight: 400;
+}
+
+.submit {
+  width: 100%;
+  padding: 12px;
+  font-weight: 600;
+  border: 0;
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.retry {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+}
+
+.result {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.gregorian,
+.transliterated {
+  color: var(--muted);
+  direction: ltr;
+}
+
+.gregorian {
+  margin: 0 0 8px;
+}
+
+.hebrew {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.transliterated {
+  margin: 0 0 12px;
+}
+
+.events {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.credit {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.credit a {
+  color: var(--accent);
+}
